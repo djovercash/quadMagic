@@ -1,0 +1,230 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.grid-container {
+  display: inline-block;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.quadrant-container {
+  position: relative;
+  display: inline-block;
+  justify-content: center;
+  color: #FFFFFF;
+  width: 837px;
+  height: 522px;
+  box-shadow: 4px 4px 12px 0 rgba(0, 0, 0, 0.5);
+  margin: 0px;
+  padding: 0px;
+}
+
+.quadrant-container > div {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  overflow: hidden;
+  transition: 0.3s;
+  z-index: 0;
+}
+
+.quadrant-container > div.active{
+    width: 100%;
+    height: 100%;
+    z-index:1000!important;
+}
+
+.active > .quadrant-bottom {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 50%;
+  width: 100%;
+  background-color: #EFEFEF;
+  color: #000000;
+}
+
+.active > .quadrant-top > .quadrant-paragraph {
+  display: inline-block;
+}
+
+.active > .quadrant-top > .quadrant-cross {
+  top: 5%;
+}
+
+.active > .quadrant-top > .quadrant-cross:before {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.active > .quadrant-top > .quadrant-cross:after {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.quadrant-wrapper {
+  border: solid 1px #FFFFFF;
+}
+
+#topLeft {
+  top: 0;
+  left: 0;
+  background-color: #060899;
+}
+
+#topLeft > .quadrant-bottom > .quadrant-button {
+  background-color: #060899
+}
+
+#topRight {
+  top: 0;
+  right: 0;
+  background-color: #96151E;
+}
+
+#topRight > .quadrant-bottom > .quadrant-button {
+  background-color: #96151E;
+}
+
+#bottomLeft {
+  bottom: 0;
+  left: 0;
+  background-color: #FFC300;
+}
+
+#bottomLeft > .quadrant-bottom > .quadrant-button {
+  background-color: #FFC300;
+}
+
+#bottomRight {
+  bottom: 0;
+  right: 0;
+  background-color: #229954;
+}
+
+#bottomRight > .quadrant-bottom > .quadrant-button {
+  background-color: #229954;
+}
+
+
+.quadrant-top {
+  display: inline-flex;
+  width: 100%;
+  height: 50%;
+}
+
+.quadrant-title{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 149px 149px;
+  width: 418px;
+  height: 261px;
+}
+
+.quadrant-title h4 {
+  position: relative;
+  font: normal bold 50px/1.25 Poppins;
+  letter-spacing: 2.5px;
+  top: 40px;
+  width: 166px;
+  margin: 0;
+  padding: 0;
+  padding-left: 75px;
+}
+
+.quadrant-paragraph {
+  display: none;
+}
+
+.quadrant-paragraph p {
+  position: relative;
+  width: 375px;
+  font-weight: bold;
+  top: 40px;
+  left: -40px;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.quadrant-bottom {
+  display: none;
+}
+
+.quadrant-bottom ul {
+  display: inline-block;
+  justify-content: center;
+}
+
+.quadrant-bottom li {
+  list-style-type: inherit;
+  text-align: left;
+}
+
+.quadrant-cross {
+  background: transparent;
+  position: absolute;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 10px 0;
+  top: 80%;
+  text-align: center;
+  width: 100%;
+}
+
+.quadrant-cross:before {
+  background: #FFFFFF;
+  content: '';
+  height: 2px;
+  margin-right: 37px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  width: 20px;
+}
+
+.quadrant-cross:after {
+  background: #FFFFFF;
+  content: '';
+  height: 2px;
+  margin-right: 37px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 20px;
+}
+
+.quadrant-button {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  text-decoration: none;
+  color: #FFFFFF;
+  padding: 8px 0px;
+}
