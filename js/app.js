@@ -20,15 +20,19 @@ const App = (function() {
     static addClick(event) {
       let parent = event.target.parentElement
       let wrapper = parent.parentElement
-      if(wrapper.className.includes("active")) {
-        wrapper.className = "quadrant-wrapper"
-      } else {
-        wrapper.className = wrapper.className + " active"
+      if (wrapper.className.includes("quadrant-wrapper")) {
+        if(wrapper.className.includes("active")) {
+          wrapper.className = "quadrant-wrapper"
+          wrapper.style.opacity = 0.7
+        } else {
+          wrapper.className = wrapper.className + " active"
+          wrapper.style.opacity = 1
+        }  
       }
     }
 
     static addBackground(title, titleCount) {
-      let backgrounds = ["WATER", "FIRE", "AIR", "EARTH"]
+      let backgrounds = ["AIR", "FIRE", "EARTH", "WATER"]
       title.style.backgroundImage = `url(./images/basic-elements-${backgrounds[titleCount]}.png)`
     }
   }

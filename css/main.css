@@ -3,6 +3,12 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  font-family: 'Merienda', cursive;
+  color: #FFFFFF;
+  background-image: url('../images/elemental_background.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .grid-container {
@@ -30,7 +36,7 @@ html, body {
   width: 50%;
   height: 50%;
   overflow: hidden;
-  transition: 0.3s;
+  transition: 0.5s;
   z-index: 0;
 }
 
@@ -41,8 +47,7 @@ html, body {
 }
 
 .active > .quadrant-bottom {
-  display: inline-flex;
-  flex-direction: column;
+  display: inline-block;
   justify-content: center;
   text-align: center;
   height: 50%;
@@ -75,24 +80,22 @@ html, body {
   transform: rotate(-45deg);
 }
 
-.quadrant-wrapper {
-  border: solid 1px #FFFFFF;
-}
-
 #topLeft {
   top: 0;
   left: 0;
-  background-color: #060899;
+  background-color: #FFC300;
+  opacity: 0.7;
 }
 
 #topLeft > .quadrant-bottom > .quadrant-button {
-  background-color: #060899
+  background-color: #FFC300
 }
 
 #topRight {
   top: 0;
   right: 0;
   background-color: #96151E;
+  opacity: 0.7;
 }
 
 #topRight > .quadrant-bottom > .quadrant-button {
@@ -102,21 +105,23 @@ html, body {
 #bottomLeft {
   bottom: 0;
   left: 0;
-  background-color: #FFC300;
+  background-color: #229954;
+  opacity: 0.7;
 }
 
 #bottomLeft > .quadrant-bottom > .quadrant-button {
-  background-color: #FFC300;
+  background-color: #229954;
 }
 
 #bottomRight {
   bottom: 0;
   right: 0;
-  background-color: #229954;
+  background-color: #060899;
+  opacity: 0.7;
 }
 
 #bottomRight > .quadrant-bottom > .quadrant-button {
-  background-color: #229954;
+  background-color: #060899;
 }
 
 
@@ -136,13 +141,16 @@ html, body {
 
 .quadrant-title h4 {
   position: relative;
-  font: normal bold 50px/1.25 Poppins;
+  font: normal bold 50px/1.25 'Merienda', cursive;
   letter-spacing: 2.5px;
   top: 40px;
   width: 166px;
   margin: 0;
   padding: 0;
-  padding-left: 75px;
+  margin-left: 75px;
+  box-shadow: 4px 4px 12px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.1)
 }
 
 .quadrant-paragraph {
@@ -164,12 +172,16 @@ html, body {
   display: none;
 }
 
-.quadrant-bottom ul {
+.quadrant-bullets {
+  margin: 10px 0px;
+}
+
+.quadrant-bullets ul {
   display: inline-block;
   justify-content: center;
 }
 
-.quadrant-bottom li {
+.quadrant-bullets li {
   list-style-type: inherit;
   text-align: left;
 }
@@ -219,12 +231,11 @@ html, body {
 }
 
 .quadrant-button {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  display: inline-flex;
+  display: inline;
   justify-content: center;
   text-decoration: none;
   color: #FFFFFF;
-  padding: 8px 0px;
+  padding: 12px 15px;
+  border-radius: 20px;
+  margin: 0px;
 }
